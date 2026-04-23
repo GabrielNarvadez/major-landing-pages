@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test &amp; Tag Course | Major Training Group</title>
+<meta name="description" content="Nationally recognised Test & Tag short course (UEECD0007). Practical, compliance-driven training for workplaces, contractors and sole traders across Australia.">
+<meta name="robots" content="index, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #0A1E42;
+    --navy-dark: #071531;
+    --red: #E3262F;
+    --red-dark: #B31C24;
+    --text: #1F2937;
+    --muted: #6B7280;
+    --line: #E5E7EB;
+    --surface: #FFFFFF;
+    --soft: #F5F7FA;
+    --warn-bg: #FFF7ED;
+    --warn-border: #F59E0B;
+    --radius: 10px;
+    --maxw: 1180px;
+    --shadow: 0 4px 14px rgba(10, 30, 66, 0.08);
+    --shadow-lg: 0 16px 40px rgba(10, 30, 66, 0.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text); line-height: 1.6; font-size: 16px; background: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Manrope', sans-serif; color: var(--navy);
+    line-height: 1.2; font-weight: 800;
+  }
+  h1 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.02em; }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); letter-spacing: -0.01em; }
+  h3 { font-size: 1.2rem; font-weight: 700; }
+  p  { margin-bottom: 1rem; }
+  a { color: var(--red); text-decoration: none; }
+  ul { list-style: none; }
+  img { max-width: 100%; display: block; }
+
+  .container { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* ------- Minimal header (best practice: NO navigation, NO exits) ------- */
+  .lp-header {
+    background: #fff; padding: 14px 0;
+    border-bottom: 3px solid var(--red);
+  }
+  .lp-header-inner {
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .logo {
+    display: flex; align-items: center;
+    pointer-events: none; /* intentionally not a link on landing pages */
+  }
+  .logo img {
+    height: 44px; width: auto; display: block;
+  }
+  @media (max-width: 560px) { .logo img { height: 36px; } }
+  .header-phone {
+    color: var(--navy); font-weight: 700; font-size: 0.95rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .header-phone:hover { color: var(--red); text-decoration: none; }
+  .header-phone small {
+    display: block; font-size: 0.72rem; font-weight: 500;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;
+  }
+
+  /* ------- Hero with form-above-the-fold ------- */
+  .hero {
+    background:
+      linear-gradient(135deg, rgba(10,30,66,0.92) 0%, rgba(7,21,49,0.96) 100%),
+      url('img/hero-trainer.jpg') center / cover no-repeat;
+    color: #fff; padding: 56px 0 88px; position: relative; overflow: hidden;
+  }
+  .hero::after {
+    content: ""; position: absolute; bottom: -1px; left: 0; right: 0;
+    height: 60px; background: #fff;
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: start;
+  }
+  @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; } }
+
+  .eyebrow {
+    display: inline-block; background: var(--red); color: #fff;
+    padding: 6px 14px; border-radius: 20px; font-size: 0.78rem;
+    font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero h1 { color: #fff; margin-bottom: 16px; }
+  .hero .lede { font-size: 1.1rem; color: rgba(255,255,255,0.9); margin-bottom: 28px; }
+
+  .hero-bullets { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; margin-bottom: 32px; }
+  .hero-bullets li {
+    position: relative; padding-left: 28px; font-size: 0.95rem;
+    color: rgba(255,255,255,0.95);
+  }
+  .hero-bullets li::before {
+    content: "✓"; position: absolute; left: 0; top: -2px;
+    color: var(--red); font-weight: 800; font-size: 1.1rem;
+  }
+  @media (max-width: 540px) { .hero-bullets { grid-template-columns: 1fr; } }
+
+  /* trust row in hero */
+  .trust-row {
+    display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: center;
+    padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.15); margin-top: 8px;
+  }
+  .trust-item { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255,255,255,0.9); }
+  .trust-item .stars { color: #FFB800; font-size: 1rem; letter-spacing: 2px; }
+  .trust-item strong { font-family: 'Manrope', sans-serif; color: #fff; font-weight: 700; }
+
+  /* ------- Form card (hero right) ------- */
+  .form-card {
+    background: #fff; color: var(--text); border-radius: 14px;
+    padding: 28px; box-shadow: var(--shadow-lg);
+    border-top: 5px solid var(--red); scroll-margin-top: 20px;
+  }
+  .form-card h2 { font-size: 1.5rem; color: var(--navy); margin-bottom: 6px; }
+  .form-card .small { color: var(--muted); font-size: 0.9rem; margin-bottom: 18px; }
+
+  .field { margin-bottom: 14px; }
+  .field label {
+    display: block; font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;
+  }
+  .field input, .field select, .field textarea {
+    width: 100%; padding: 11px 13px; font-family: inherit; font-size: 0.98rem;
+    border: 1.5px solid var(--line); border-radius: 8px; color: var(--text);
+    transition: border-color 0.15s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: none; border-color: var(--red);
+  }
+  .field textarea { resize: vertical; min-height: 80px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 480px) { .field-row { grid-template-columns: 1fr; } }
+
+  .btn {
+    display: inline-block; padding: 14px 24px; border-radius: var(--radius);
+    font-weight: 700; font-family: 'Manrope', sans-serif; font-size: 1rem;
+    cursor: pointer; border: none; text-align: center;
+    transition: all 0.15s ease; width: 100%;
+  }
+  .btn-primary { background: var(--red); color: #fff; box-shadow: 0 4px 14px rgba(227, 38, 47, 0.35); }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
+  .btn-inline { width: auto; padding: 14px 32px; }
+
+  .form-disclaimer {
+    font-size: 0.76rem; color: var(--muted); margin-top: 12px; text-align: center; line-height: 1.5;
+  }
+  .form-trust {
+    display: flex; justify-content: space-between; gap: 12px; margin-top: 14px;
+    font-size: 0.78rem; color: var(--muted);
+  }
+  .form-trust span { display: flex; align-items: center; gap: 6px; }
+
+  /* ------- Stats band (social proof) ------- */
+  .stats {
+    background: var(--navy); color: #fff; padding: 48px 0; margin-top: -1px;
+  }
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center;
+  }
+  @media (max-width: 720px) { .stats-grid { grid-template-columns: 1fr 1fr; gap: 32px 20px; } }
+  .stat .num {
+    font-family: 'Manrope', sans-serif; font-weight: 800; color: var(--red);
+    font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1;
+  }
+  .stat .label {
+    font-size: 0.9rem; color: rgba(255,255,255,0.85); margin-top: 6px;
+    text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;
+  }
+
+  /* ------- Section base ------- */
+  section.block { padding: 64px 0; }
+  .section-head { text-align: center; max-width: 720px; margin: 0 auto 40px; }
+  .section-head .tag {
+    color: var(--red); font-weight: 700; font-size: 0.82rem;
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; display: block;
+  }
+  .section-head h2 { margin-bottom: 10px; }
+  .section-head p { color: var(--muted); font-size: 1.02rem; }
+  .divider-bar {
+    width: 56px; height: 4px; background: var(--red); border-radius: 2px; margin: 14px auto 0;
+  }
+  .bg-soft { background: var(--soft); }
+
+  /* audience — 2-col with image */
+  .audience-layout {
+    display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center;
+  }
+  @media (max-width: 860px) { .audience-layout { grid-template-columns: 1fr; gap: 32px; } }
+  .audience-image {
+    position: relative; border-radius: 14px; overflow: hidden;
+    box-shadow: var(--shadow-lg); aspect-ratio: 4 / 5;
+  }
+  .audience-image img { width: 100%; height: 100%; object-fit: cover; }
+  .audience-image::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(10,30,66,0.55) 100%);
+  }
+  .audience-badge {
+    position: absolute; bottom: 20px; left: 20px; right: 20px; z-index: 2;
+    color: #fff; font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 0.92rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .audience-badge .dot { width: 8px; height: 8px; background: var(--red); border-radius: 50%; }
+  @media (max-width: 860px) { .audience-image { aspect-ratio: 16 / 10; } }
+
+  .chip-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px;
+  }
+  .chip {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 16px 18px; display: flex; align-items: center; gap: 12px;
+    font-weight: 500; font-size: 0.95rem; transition: all 0.15s;
+  }
+  .chip:hover { border-color: var(--red); transform: translateY(-2px); box-shadow: var(--shadow); }
+  .chip .dot { width: 10px; height: 10px; background: var(--red); border-radius: 50%; flex-shrink: 0; }
+  .note { text-align: center; margin-top: 24px; font-style: italic; color: var(--muted); }
+
+  /* what you'll learn — 2-col with image */
+  .learn-layout {
+    display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center;
+  }
+  @media (max-width: 860px) { .learn-layout { grid-template-columns: 1fr; gap: 32px; } }
+  .learn-image {
+    border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-lg);
+    aspect-ratio: 4 / 3;
+  }
+  .learn-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .learn-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px;
+  }
+  .learn-grid li {
+    position: relative; padding-left: 36px; font-size: 1rem; line-height: 1.5; padding-top: 2px;
+  }
+  .learn-grid li::before {
+    content: "▸"; position: absolute; left: 0; top: -2px;
+    width: 26px; height: 26px; background: var(--red); color: #fff;
+    border-radius: 6px; font-size: 0.8rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  @media (max-width: 680px) { .learn-grid { grid-template-columns: 1fr; } }
+
+  /* details — 2-col with image */
+  .details-layout {
+    display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center;
+  }
+  @media (max-width: 860px) { .details-layout { grid-template-columns: 1fr; gap: 32px; } }
+  .details-image {
+    border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-lg);
+    aspect-ratio: 5 / 6;
+  }
+  .details-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  @media (max-width: 860px) { .details-image { aspect-ratio: 16 / 10; } }
+
+  .details-card {
+    background: #fff; border-radius: 14px; box-shadow: var(--shadow);
+    padding: 6px 26px;
+    border-top: 4px solid var(--red);
+  }
+  .detail-row {
+    display: grid; grid-template-columns: 210px 1fr; gap: 20px;
+    padding: 16px 0; border-bottom: 1px solid var(--line);
+  }
+  .detail-row:last-child { border-bottom: 0; }
+  .detail-row .label {
+    font-family: 'Manrope', sans-serif; font-weight: 700; color: var(--navy);
+    text-transform: uppercase; font-size: 0.82rem; letter-spacing: 0.05em;
+  }
+  @media (max-width: 600px) { .detail-row { grid-template-columns: 1fr; gap: 4px; } }
+  .details-note {
+    background: var(--soft); padding: 14px 20px; border-radius: var(--radius);
+    max-width: 740px; margin: 16px auto 0; font-size: 0.92rem; color: var(--muted);
+    text-align: center;
+  }
+
+  /* cert */
+  .cert-card {
+    background: #fff; border-radius: 14px; padding: 32px; max-width: 760px;
+    margin: 0 auto; box-shadow: var(--shadow); border-top: 4px solid var(--red);
+  }
+  .cert-code {
+    display: inline-block; background: var(--navy); color: #fff;
+    padding: 8px 16px; border-radius: 6px; font-family: 'Manrope', sans-serif;
+    font-weight: 700; letter-spacing: 0.04em; margin-bottom: 14px;
+  }
+  .callout-warn {
+    background: var(--warn-bg); border-left: 4px solid var(--warn-border);
+    padding: 16px 20px; border-radius: 6px; margin-top: 20px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .callout-warn .icon { font-size: 1.3rem; flex-shrink: 0; }
+  .callout-warn p { margin: 0; font-size: 0.95rem; }
+  .callout-warn strong { color: var(--navy); }
+
+  /* why major on dark */
+  .bg-navy { background: var(--navy); color: #fff; padding: 72px 0; }
+  .bg-navy h2 { color: #fff; }
+  .bg-navy .section-head p { color: rgba(255,255,255,0.75); }
+
+  .why-layout {
+    display: grid; grid-template-columns: 1.05fr 1.25fr; gap: 20px;
+  }
+  @media (max-width: 900px) { .why-layout { grid-template-columns: 1fr; } }
+
+  .why-featured {
+    background: linear-gradient(140deg, var(--red) 0%, var(--red-dark) 100%);
+    color: #fff; padding: 40px; border-radius: 14px;
+    display: flex; flex-direction: column; justify-content: center;
+    box-shadow: 0 12px 30px rgba(227, 38, 47, 0.25);
+    position: relative; overflow: hidden;
+  }
+  .why-featured::before {
+    content: ""; position: absolute; top: -40px; right: -40px;
+    width: 180px; height: 180px; border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+  }
+  .why-featured .why-icon {
+    width: 64px; height: 64px; background: rgba(255,255,255,0.18);
+    border-radius: 14px; display: flex; align-items: center; justify-content: center;
+    margin-bottom: 22px; position: relative;
+  }
+  .why-featured h3 {
+    color: #fff; font-size: 1.5rem; margin-bottom: 12px; position: relative;
+  }
+  .why-featured p {
+    color: rgba(255,255,255,0.92); font-size: 1rem; margin: 0 0 20px;
+    position: relative; line-height: 1.55;
+  }
+  .why-featured-stats {
+    display: flex; gap: 24px; margin-top: 8px; padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2); position: relative;
+  }
+  .why-featured-stats div .n {
+    font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.5rem;
+    color: #fff; line-height: 1;
+  }
+  .why-featured-stats div .l {
+    font-size: 0.78rem; color: rgba(255,255,255,0.85);
+    text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px;
+  }
+
+  .why-others {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  @media (max-width: 560px) { .why-others { grid-template-columns: 1fr; } }
+
+  .why-item {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius); padding: 22px;
+  }
+  .why-item h3 { font-size: 1.02rem; margin-bottom: 8px; color: #fff; }
+  .why-item p { color: rgba(255,255,255,0.82); font-size: 0.92rem; margin: 0; line-height: 1.55; }
+  .why-icon {
+    width: 42px; height: 42px; background: var(--red); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+  }
+  .why-icon svg { width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 2; }
+
+  /* benefits — fixed 3×2 grid */
+  .benefits-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  }
+  @media (max-width: 860px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .benefits-grid { grid-template-columns: 1fr; } }
+  .benefit-card {
+    background: #fff; border-radius: var(--radius); padding: 22px;
+    border: 1px solid var(--line); transition: all 0.15s;
+  }
+  .benefit-card:hover { border-color: var(--red); box-shadow: var(--shadow); transform: translateY(-2px); }
+  .benefit-card .num {
+    font-family: 'Manrope', sans-serif; font-weight: 800; color: var(--red);
+    font-size: 1.3rem; margin-bottom: 8px; display: block;
+  }
+  .benefit-card h3 { margin-bottom: 4px; }
+  .benefit-card p { margin: 0; font-size: 0.94rem; }
+
+  /* entry requirements */
+  .reqs {
+    max-width: 740px; margin: 0 auto; background: #fff;
+    border-radius: 14px; padding: 28px 32px; box-shadow: var(--shadow);
+  }
+  .reqs li {
+    position: relative; padding-left: 32px; margin-bottom: 12px; font-size: 0.98rem;
+  }
+  .reqs li::before {
+    content: "✓"; position: absolute; left: 0; top: 1px;
+    width: 22px; height: 22px; background: var(--red); color: #fff;
+    border-radius: 50%; font-size: 0.72rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .reqs li:last-child { margin-bottom: 0; }
+
+  /* secondary CTA block */
+  .cta-band {
+    background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+    color: #fff; padding: 52px 0; text-align: center;
+  }
+  .cta-band h2 { color: #fff; margin-bottom: 12px; }
+  .cta-band p { color: rgba(255,255,255,0.95); margin-bottom: 24px; font-size: 1.05rem; }
+  .cta-band .btn {
+    background: #fff; color: var(--red); box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  }
+  .cta-band .btn:hover { background: var(--navy); color: #fff; }
+
+  /* FAQ */
+  .faq-list { max-width: 800px; margin: 0 auto; }
+  .faq {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    margin-bottom: 10px; overflow: hidden;
+  }
+  .faq summary {
+    list-style: none; cursor: pointer; padding: 18px 22px;
+    font-family: 'Manrope', sans-serif; font-weight: 700; color: var(--navy);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 1rem; gap: 16px;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+"; color: var(--red); font-size: 1.4rem; font-weight: 700; flex-shrink: 0;
+  }
+  .faq[open] summary::after { content: "−"; }
+  .faq[open] { box-shadow: var(--shadow); border-color: var(--red); }
+  .faq .answer { padding: 0 22px 20px; color: var(--text); font-size: 0.96rem; }
+
+  /* ------- Minimal footer (legal only — no site nav, best practice for LPs) ------- */
+  .lp-footer {
+    background: var(--navy-dark); color: rgba(255,255,255,0.55); padding: 28px 0;
+    font-size: 0.82rem;
+  }
+  .lp-footer-inner {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; align-items: center;
+  }
+  .lp-footer a { color: rgba(255,255,255,0.7); margin-left: 20px; }
+  .lp-footer a:hover { color: var(--red); text-decoration: none; }
+  @media (max-width: 560px) {
+    .lp-footer-inner { justify-content: center; text-align: center; }
+    .lp-footer a { margin: 0 10px; }
+  }
+
+  /* ------- Mobile sticky CTA ------- */
+  .mobile-cta {
+    display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+    background: #fff; padding: 10px 16px; box-shadow: 0 -4px 16px rgba(0,0,0,0.1);
+    border-top: 1px solid var(--line);
+  }
+  .mobile-cta .btn { width: 100%; }
+  @media (max-width: 720px) { .mobile-cta { display: block; } body { padding-bottom: 70px; } }
+</style>
+</head>
+<body>
+
+<!-- ====================== MINIMAL HEADER — NO NAV ====================== -->
+<!-- Best practice: no navigation, no menu links. The only exit is the phone number
+     (still a conversion). The logo is intentionally not clickable. -->
+<header class="lp-header">
+  <div class="container lp-header-inner">
+    <div class="logo">
+      <img src="logo.webp" alt="Major Training Group — EST '98">
+    </div>
+    <a href="tel:1300790822" class="header-phone">
+      <span>
+        <small>Talk to an advisor</small>
+        📞 1300 790 822
+      </span>
+    </a>
+  </div>
+</header>
+
+<!-- ====================== HERO WITH FORM ABOVE THE FOLD ====================== -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Short Course · UEECD0007</span>
+      <h1>Learn to Test &amp; Tag Electrical Equipment Safely and Compliantly</h1>
+      <p class="lede">
+        Meet Australian compliance requirements with our industry-approved,
+        nationally recognised Test &amp; Tag short course — hands-on, practical,
+        built for real workplaces.
+      </p>
+      <ul class="hero-bullets">
+        <li>Fast, practical training</li>
+        <li>Nationally recognised unit</li>
+        <li>No previous electrical experience</li>
+        <li>Delivered by industry trainers</li>
+      </ul>
+
+      <div class="trust-row">
+        <div class="trust-item">
+          <span class="stars">★★★★★</span>
+          <span><strong>4.9/5</strong> from 1,375+ reviews</span>
+        </div>
+        <div class="trust-item">
+          <span>🏛️</span>
+          <span><strong>RTO #6139</strong> · 25+ years</span>
+        </div>
+        <div class="trust-item">
+          <span>🇦🇺</span>
+          <span>Proudly Australian</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- HubSpot form embed target.
+         Replace this entire <form> with the HubSpot embed snippet once the
+         "Course Enquiry — Master" form is live. Keep the hidden field
+         course_of_interest with value "Test & Tag" when configuring the embed. -->
+    <form class="form-card" id="enquire" action="#" method="post" novalidate>
+      <h2>Get course dates &amp; pricing</h2>
+      <p class="small">We'll be in touch within one business day.</p>
+
+      <input type="hidden" name="course_of_interest" value="Test &amp; Tag">
+
+      <div class="field-row">
+        <div class="field">
+          <label for="firstname">First name *</label>
+          <input id="firstname" name="firstname" type="text" autocomplete="given-name" required>
+        </div>
+        <div class="field">
+          <label for="lastname">Last name *</label>
+          <input id="lastname" name="lastname" type="text" autocomplete="family-name" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="phone">Mobile *</label>
+          <input id="phone" name="mobilephone" type="tel" autocomplete="tel" required>
+        </div>
+        <div class="field">
+          <label for="state">State *</label>
+          <select id="state" name="state" required>
+            <option value="">Select…</option>
+            <option>QLD</option><option>NSW</option><option>VIC</option>
+            <option>SA</option><option>WA</option><option>TAS</option>
+            <option>ACT</option><option>NT</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Enquire Now →</button>
+
+      <div class="form-trust">
+        <span>🔒 Your info is safe</span>
+        <span>⚡ No spam, ever</span>
+      </div>
+      <p class="form-disclaimer">
+        By submitting, you agree to Major Training Group contacting you about this course.
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- ====================== SOCIAL PROOF STATS ====================== -->
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><div class="num">10,000+</div><div class="label">Students each year</div></div>
+    <div class="stat"><div class="num">95%</div><div class="label">Student pass rate</div></div>
+    <div class="stat"><div class="num">25+</div><div class="label">Years experience</div></div>
+    <div class="stat"><div class="num">#1</div><div class="label">Flexible delivery</div></div>
+  </div>
+</section>
+
+<!-- ====================== WHO THIS COURSE IS FOR ====================== -->
+<section class="block">
+  <div class="container">
+    <div class="audience-layout">
+      <div class="audience-image">
+        <img src="img/students-group.jpg" alt="Major Training students and trainers at a workshop session" loading="lazy">
+        <div class="audience-badge">
+          <span class="dot"></span>
+          Real students · Major Training workshops
+        </div>
+      </div>
+      <div>
+        <span class="tag" style="color: var(--red); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; display: block;">Who it's for</span>
+        <h2 style="margin-bottom: 10px">Built for anyone responsible for electrical equipment safety</h2>
+        <div class="divider-bar" style="margin: 14px 0 24px"></div>
+        <p style="color: var(--muted); margin-bottom: 20px">This course is designed for anyone inspecting or maintaining portable electrical equipment — no previous electrical experience required.</p>
+        <ul class="chip-grid">
+          <li class="chip"><span class="dot"></span>Tradespeople &amp; apprentices</li>
+          <li class="chip"><span class="dot"></span>Maintenance staff</li>
+          <li class="chip"><span class="dot"></span>Construction workers</li>
+          <li class="chip"><span class="dot"></span>Health &amp; aged care staff</li>
+          <li class="chip"><span class="dot"></span>Retail &amp; hospitality</li>
+          <li class="chip"><span class="dot"></span>Sole traders</li>
+          <li class="chip"><span class="dot"></span>WHS representatives</li>
+          <li class="chip"><span class="dot"></span>Facilities teams</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== WHAT YOU'LL LEARN ====================== -->
+<section class="block bg-soft">
+  <div class="container">
+    <div class="learn-layout">
+      <div>
+        <span class="tag" style="color: var(--red); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; display: block;">What you'll learn</span>
+        <h2 style="margin-bottom: 10px">Hands-on skills you can apply on day one</h2>
+        <div class="divider-bar" style="margin: 14px 0 20px"></div>
+        <p style="color: var(--muted); margin-bottom: 24px">Practical skills to ensure equipment safety and regulatory compliance — delivered by trainers with genuine industry experience.</p>
+        <ul class="learn-grid">
+          <li>Electrical safety principles and hazards</li>
+          <li>Australian Standards (AS/NZS 3760)</li>
+          <li>Visual inspection of electrical equipment</li>
+          <li>Portable appliance testing (PAT) equipment</li>
+          <li>Testing procedures &amp; interpretation</li>
+          <li>Tagging, labelling &amp; record keeping</li>
+          <li>Hazard identification &amp; fault reporting</li>
+          <li>Safe handling &amp; risk control</li>
+        </ul>
+      </div>
+      <div class="learn-image">
+        <img src="img/training-closeup.jpg" alt="Major Training trainer demonstrating test and tag on a portable appliance" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== COURSE DETAILS ====================== -->
+<section class="block">
+  <div class="container">
+    <div class="details-layout">
+      <div class="details-image">
+        <img src="img/practical-work.jpg" alt="Students practising test and tag on equipment during a Major Training workshop" loading="lazy">
+      </div>
+      <div>
+        <span class="tag" style="color: var(--red); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; display: block;">Course details</span>
+        <h2 style="margin-bottom: 10px">Structured for busy workplaces</h2>
+        <div class="divider-bar" style="margin: 14px 0 24px"></div>
+        <div class="details-card">
+          <div class="detail-row"><span class="label">Course type</span><span>Short Course</span></div>
+          <div class="detail-row"><span class="label">Delivery mode</span><span>Face-to-face practical</span></div>
+          <div class="detail-row"><span class="label">Assessment</span><span>Competency based</span></div>
+          <div class="detail-row"><span class="label">Duration</span><span>Short, efficient session</span></div>
+          <div class="detail-row"><span class="label">Class size</span><span>Small groups, hands-on</span></div>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-top: 14px; font-style: italic">All equipment and testing devices are provided during the course.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CERTIFICATION ====================== -->
+<section class="block bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">Certification</span>
+      <h2>Nationally recognised Statement of Attainment</h2>
+      <div class="divider-bar"></div>
+    </div>
+    <div class="cert-card">
+      <span class="cert-code">UEECD0007</span>
+      <h3>Apply work health and safety regulations, codes and practices in the workplace</h3>
+      <p style="margin-top: 12px">
+        On successful completion, students receive a Statement of Attainment for this
+        nationally recognised unit. It meets workplace compliance requirements for
+        test &amp; tag activities under Australian Standards.
+      </p>
+      <div class="callout-warn">
+        <span class="icon">⚠️</span>
+        <p><strong>Please note:</strong> Test &amp; Tag is not an electrical licence and does not permit electrical installation work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== WHY MAJOR TRAINING ====================== -->
+<section class="bg-navy">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag" style="color: var(--red)">Why Major Training</span>
+      <h2>Training built for real workplaces</h2>
+      <div class="divider-bar"></div>
+    </div>
+    <div class="why-layout">
+      <!-- FEATURED — larger, branded, with proof stats -->
+      <div class="why-featured">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </div>
+        <h3>Registered Training Organisation</h3>
+        <p>RTO #6139 — delivering nationally recognised training to priority trades across Australia for over 25 years. Trusted by thousands of workplaces, contractors and sole traders.</p>
+        <div class="why-featured-stats">
+          <div>
+            <div class="n">25+</div>
+            <div class="l">Years</div>
+          </div>
+          <div>
+            <div class="n">10,000+</div>
+            <div class="l">Students / year</div>
+          </div>
+          <div>
+            <div class="n">95%</div>
+            <div class="l">Pass rate</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2×2 grid of supporting reasons -->
+      <div class="why-others">
+        <div class="why-item">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 3.13a4 4 0 0 1 0 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Real industry trainers</h3>
+          <p>Every trainer brings genuine trade experience and a safety-first approach.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Compliance driven</h3>
+          <p>Training mapped to current Australian Standards and WHS obligations.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Practical delivery</h3>
+          <p>Hands-on sessions using real equipment — you leave able to do the work.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Safety &amp; risk focus</h3>
+          <p>Strong emphasis on identifying hazards and applying sensible risk control.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== BENEFITS ====================== -->
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">Benefits</span>
+      <h2>Why businesses &amp; individuals choose this course</h2>
+      <div class="divider-bar"></div>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <span class="num">01</span>
+        <h3>Improve workplace safety</h3>
+        <p>Identify and control electrical hazards before they cause incidents.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="num">02</span>
+        <h3>Meet compliance obligations</h3>
+        <p>Satisfy WHS requirements and Australian Standards expectations.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="num">03</span>
+        <h3>Reduce external testing costs</h3>
+        <p>Handle inspections in-house and reduce downtime.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="num">04</span>
+        <h3>Upskill your team</h3>
+        <p>Give staff a nationally recognised skill they can use across industries.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="num">05</span>
+        <h3>Improve employability</h3>
+        <p>Stand out in construction, maintenance, health care, retail and beyond.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="num">06</span>
+        <h3>Scale to your business</h3>
+        <p>Perfect for upskilling staff or gaining a valuable compliance qualification.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ENTRY REQUIREMENTS ====================== -->
+<section class="block bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">Entry requirements</span>
+      <h2>What you need to get started</h2>
+      <div class="divider-bar"></div>
+    </div>
+    <ul class="reqs">
+      <li>No prior electrical experience required</li>
+      <li>Basic literacy and numeracy skills</li>
+      <li>Closed-in footwear and appropriate PPE for practical sessions</li>
+      <li>Our team will confirm suitability during the enquiry process</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ====================== SECONDARY CTA BAND ====================== -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Ready to get started?</h2>
+    <p>Places are limited — speak to a course advisor today.</p>
+    <a href="#enquire" class="btn btn-inline">Enquire Now →</a>
+  </div>
+</section>
+
+<!-- ====================== FAQ ====================== -->
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">FAQs</span>
+      <h2>Common questions</h2>
+      <div class="divider-bar"></div>
+    </div>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>Is Test &amp; Tag mandatory?</summary>
+        <div class="answer">
+          Test &amp; Tag is required in many workplaces under WHS regulations and Australian
+          Standards, particularly in construction and high-risk environments.
+        </div>
+      </details>
+      <details class="faq">
+        <summary>Can anyone do this course?</summary>
+        <div class="answer">
+          Yes. No electrical background is required — the course is designed for anyone
+          responsible for inspecting and maintaining portable electrical equipment.
+        </div>
+      </details>
+      <details class="faq">
+        <summary>Does this qualify me as an electrician?</summary>
+        <div class="answer">
+          No. This course allows you to test and tag portable electrical equipment only.
+          It is not a licence to perform electrical installation work.
+        </div>
+      </details>
+      <details class="faq">
+        <summary>Can you deliver this course onsite for businesses?</summary>
+        <div class="answer">
+          Yes. Group and workplace delivery options are available on request — get in touch
+          and we'll tailor a session for your team.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== MINIMAL LEGAL FOOTER ====================== -->
+<!-- Best practice: LP footer is legal only — no site nav, no "careers", no "about".
+     Anything that takes the visitor off-page without converting is a leak. -->
+<footer class="lp-footer">
+  <div class="container lp-footer-inner">
+    <span>© 2026 Major Training Group · RTO #6139</span>
+    <div>
+      <a href="https://major.edu.au/privacy-policy/">Privacy Policy</a>
+      <a href="https://major.edu.au/terms-conditions/">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ====================== MOBILE STICKY CTA ====================== -->
+<div class="mobile-cta">
+  <a href="#enquire" class="btn btn-primary">Enquire Now — Get Course Dates →</a>
+</div>
+
+</body>
+</html>
